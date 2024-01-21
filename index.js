@@ -16,18 +16,19 @@ let scissorshuman = document.querySelector(".scissorshuman")
   let papercomputer = document.querySelector(".papercomputer")
   let scissorscomputer = document.querySelector(".scissorscomputer")
 
+  let gameover = document.querySelector("#gamefinish")
+  
+
   gamebutton.addEventListener("click", () => {
-      gameopen.style.display = "block";
-     gamebutton.classList = "none"
+     gameopen.style.display = "block";
+     gamebutton.className = "addclick"
   }
 
   ) 
 
-  
-
   const ramdomComp = () => {
      let game = [rockcomputer,papercomputer,scissorscomputer]
-      let randomNum = Math.floor(Math.random() * game.length);
+     let randomNum = Math.floor(Math.random() * game.length);
      let randomWord = game[randomNum]
          for (let i = 0; i < 3;++i) {
           if (i != randomNum ) {
@@ -38,32 +39,29 @@ let scissorshuman = document.querySelector(".scissorshuman")
         return randomNum;
   }
 
-
-  
-
-
 rock.addEventListener("click",() => {
        paperhuman.style.display = "none";
        scissorshuman.style.display = "none";
-        rockhuman.style.display = "block" ;
-         let compchoise =   ramdomComp();
+       rockhuman.style.display = "block" ;
+       let compchoise =   ramdomComp();
 
-
-     
-
-      
           switch (compchoise ) {
           case 1:
-          numbercomputer.textContent = + numbercomputer.textContent + 1;
+          numbercomputer.textContent = +numbercomputer.textContent + 1;
           break;
           case 2:
           numberhuman.textContent = +numberhuman.textContent + 1;
           break;
        }
-
+   
+     if (numberhuman.textContent>4 || numbercomputer.textContent>4) {
+         gameover.style.display = "block"
+          gameopen.style.display = "none";
+          gamer.style.display = ""
+         
+     }  
       
 })
-
 
 paper.addEventListener("click",() => {
    
@@ -79,6 +77,15 @@ paper.addEventListener("click",() => {
           numbercomputer.textContent =+numbercomputer.textContent +1;
           break;
        }
+
+     if (numberhuman.textContent>4 || numbercomputer.textContent>4) {
+         gameover.style.display = "block"
+          gameopen.style.display = "none";
+          gamer.style.display = ""
+         
+     }  
+
+
 })
 
 scissors.addEventListener("click",() => {
@@ -94,6 +101,15 @@ scissors.addEventListener("click",() => {
           numbercomputer.textContent = +numbercomputer.textContent+1;
           break;
        }
+
+
+
+       if (numberhuman.textContent>4 || numbercomputer.textContent>4) {
+          gameover.style.display = "block"
+          gameopen.style.display = "none";
+          gamer.style.display = ""
+         
+     }  
     
 })
 

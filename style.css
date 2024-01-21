@@ -4,23 +4,66 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 40px;
   display: none;
 }
 
-.none {
+#gamefinish {
+  display: none;
+}
+
+.flexbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  row-gap: 30px;
+  font-size: 40px;
+}
+
+.overgame {
+  font-size: 150px;
+  color: rgb(0, 0, 0);
+}
+
+.gamelink {
+  font-size: 70px;
+  animation: zoom-in-zoom-out 1s ease infinite;
+}
+
+@keyframes zoom-in-zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
+
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
+.pageoff {
+  display: block;
+}
+
+.addclick{
   display: none;
 }
 
 .mainbutton {
   display: flex;
   justify-content: center;
-  margin-top: 300px;
 }
 
 .gamestart {
-  font-size: 50px;
-
+  border: solid blanchedalmond;
+  border-radius: 15px;
+  font-size: 80px;
+  margin-top: 280px;
+  cursor: pointer;
 }
 
 .child {

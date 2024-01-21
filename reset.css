@@ -6,7 +6,10 @@
 
 body {
     height: 100vh;
-    background-color: rgb(212, 226, 238);
+    background-image: url(game.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover; 
 }
 
 ul,
